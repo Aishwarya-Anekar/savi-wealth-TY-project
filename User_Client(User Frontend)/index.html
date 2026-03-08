@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SaviWealth - Your trusted partner in wealth management. Professional financial advisory services with personalized investment strategies since 2022." />
+    <meta name="keywords" content="wealth management, financial advisory, investment planning, mutual funds, portfolio management, tax planning" />
+    <meta property="og:title" content="SaviWealth - Professional Wealth Management" />
+    <meta property="og:description" content="Comprehensive financial advisory services with personalized investment strategies and expert guidance." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>SaviWealth - Professional Wealth Management</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Iframe code -->
+
+<iframe
+  id="iframeId"
+  src="https://www.stack-ai.com/embed/6d292b14-0ca0-4162-8c35-05cc74429c79/0ae860aa-8fbc-4528-8805-ced91f04c786/685404c96fe56826c33f1570"
+  width="40"
+  height="60"
+  frameborder="0"
+  style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(209, 250, 241, 0.2);
+    transition: all 0.3s ease-in-out;
+    max-width: 90vw;
+    max-height: 85vh;
+  "
+></iframe>
+
+
+<!-- Script for handling the resizing -->
+<script>
+  function handleMessage(event) {
+    if (event.data.type === 'chatbotStateChange') {
+      const iframe = document.getElementById('iframeId')
+      if (iframe) {
+        if (event.data.isClosed) {
+          iframe.style.width = '65px'
+          iframe.style.height = '65px'
+        } else {
+          iframe.style.width = '450px'
+          iframe.style.height = '600px'
+        }
+      }
+    }
+  }
+
+  // Attach event listener
+  window.addEventListener('message', handleMessage)
+
+  // If you want to clean up the event listener when the page unloads (optional)
+  window.addEventListener('beforeunload', function () {
+    window.removeEventListener('message', handleMessage)
+  })
+</script>
+      
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
